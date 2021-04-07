@@ -24,6 +24,7 @@ class HomeViewController extends GetxController {
     super.onClose();
   }
 
+  //call the usecases to get the coupon
   Future<void> getCoupon(String id) async {
     await addEvents(event: CouponEvents.getCoupon(id));
   }

@@ -9,6 +9,7 @@ class CouponRepositoryImpl {
   });
   Future<CouponDto> getCouponApi(String id) async {
     try {
+      //make the request to the API Rest 
       Response response = await client.get('/coupon/$id');
       return CouponDto.fromJson(response.body);
     } catch (e) {

@@ -2,7 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'coupon_dto.freezed.dart';
 part 'coupon_dto.g.dart';
-
+//Create the Coupon from the json response
 @freezed
 abstract class CouponDto with _$CouponDto {
   const factory CouponDto({

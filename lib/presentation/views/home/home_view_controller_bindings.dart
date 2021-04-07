@@ -19,7 +19,7 @@ class HomeViewControllerBindings extends Bindings {
                 repositoryImpl: Get.put(
                   CouponRepositoryImpl(
                     client: GetHttpClient(
-                      baseUrl: '',
+                      baseUrl: 'http://172.19.0.1',
                       timeout: Duration(seconds: 15),
                     ),
                   ),

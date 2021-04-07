@@ -9,6 +9,7 @@ class CouponController {
     @required this.repositoryImpl,
   });
 
+  //call the repositori the get the response from the API Rest
   Future<Coupon> getCoupon(String id) async {
     Coupon coupon = await repositoryImpl.getCouponApi(id).then(
           (value) => value.toEntity,
