@@ -1,10 +1,14 @@
-import 'package:qr_code_scanner/qr_code_scanner.dart';
+import 'package:flutter/material.dart';
+import 'package:qr_code/application/coupon/coupon_events.dart';
+import 'package:qr_code/application/coupon/coupon_usecase.dart';
 import 'package:get/get.dart';
 
 class HomeViewController extends GetxController {
-  QRViewController qrViewController;
-  Barcode result;
-  
+  final CouponUsecase usecases;
+  Function get addEvents => usecases.addEvent;
+
+  HomeViewController({@required this.usecases});
+
   @override
   void onInit() {
     super.onInit();
@@ -18,5 +22,9 @@ class HomeViewController extends GetxController {
   @override
   void onClose() {
     super.onClose();
+  }
+
+  Future<void> getCoupon(String id) async {
+    await addEvents(event: CouponEvents.getCoupon(id));
   }
 }

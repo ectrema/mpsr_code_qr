@@ -20,11 +20,8 @@ class QrView extends GetView<HomeViewController> {
   }
 
   void _onQRViewCreated(QRViewController value) {
-    controller.qrViewController = value;
-
-    value.scannedDataStream.listen((scanData) {
-      controller.result = scanData;
-      Get.back();
+    value.scannedDataStream.listen((scanData) async {
+      await controller.getCoupon(scanData.code);
     });
   }
 }

@@ -11,7 +11,7 @@ class HomeView extends GetView<HomeViewController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Go style'),
+        title: Text('Go Style'),
       ),
       body: Center(
         child: ElevatedButton(
